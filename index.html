@@ -1,192 +1,275 @@
-<html lang="en_us"><head>
-  <script>
-    $(window).resize(function() {
-      if ($(this).width() > 600) {
-        $('#picture').hide();
-      } else {
-    $('.#picture').show();
-    }
-});
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academicons is licensed under the SIL OFL 1.1 license • This page was built using Jekyll (theme: minima), and uses code from Simple Grid • Request new icons ...">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-  <link rel="stylesheet" href="/academicons/css/custom.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="canonical" href="https://jpswalsh.github.io/academicons/">
-  <link rel="alternate" type="application/rss+xml" title="Academicons" href="/academicons/feed.xml">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  
-</head>
-  <title>Md Solimul Chowdhury</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Solimul Chowdhury - Academic Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file -->
 
-  <style>
-     @media screen and (max-width: 600px) {
-      #picture { visibility: hidden; width:0px; height: 0px;}
-    }
-    @media screen and (max-width: 600px) {
-      #buttons { visibility: hidden; width:0px; height: 0px;}
-    }
-    .button_class {
-        display: inline-block;
-        /* background-color: #7b38d8; */
-        border-radius: 10px;
-        border: 4px double #cccccc;
-        color: black;
-        text-align: center;
-        font-size: 14px;
-        /* padding: 20px; */
-        width: 110px;
-        height:40px;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin-left: 45px;
+    <style>
+        body {
+            font-family: "Arial", sans-serif; /* Set font to sans-serif */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
 
-      }
-      .button_class:hover {
-        background-color: #4CAF50; /* Green */
+        header {
+      background: linear-gradient(to right, #000000 25%, #f6f8fa 50%);
         color: white;
-      }
-  </style>
+        padding: 20px;
+        text-align: left;
+        overflow: auto;
+        max-height: 80vh; /* Set a maximum height for scrolling */
+    }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: none;
+            max-height: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        section {
+            width: 90%;
+            margin: 10px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        .about-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+
+        .about-column {
+            flex: 1;
+            text-align: justify;
+          }
+
+        .about-column.img {
+            flex: 0 0 20%; /* 20% width for the image */
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .about-column img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+          }
+
+        .thrusts-column {
+            flex: 1;
+            text-align: justify;
+            margin-top: 0px; /* Add margin to separate recent news from about me */
+            margin-left: 60px;
+            border: #ddd;
+            border-radius: 10%;
+            border-color: rgb(5, 56, 56);
+            max-height: 100%; /* Ensure it takes full height of the container */
+
+          }
+
+        h1, h2 {
+            color: grey;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        p contacts {
+            color: grey;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .hrefimg {
+          max-width: 40px;
+          max-height: 40px;
+          transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+          margin-left: 10px;
+        }
+
+        .hrefimg:hover {
+            transform: scale(1.20);
+        }
+
+        ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* li::before {
+    content: "\2022"; 
+    font-size: 20px;
+    color: #3498db; 
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+
+.fancy-bullet strong {
+    display: inline;
+}
+
+.hover-text {
+    margin-top: 10px; /* Adjust the spacing between strong and hover text */
+    border: 2px solid #3498db; /* Fancy blue border */
+    padding: 10px; /* Add padding for a better look */
+    border-radius: 10px; /* Rounded corners */
+    display: block; /* Show the hover text */
+}
+
+.fancy-bullet .hover-text::before {
+    content: none; /* Remove bullet point for hover text */
+}
+
+#grants {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.two-columns {
+  display: flex;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+    </style>
 </head>
 <body>
-  <div class="container" style="margin-top:10px">
-    <div class="row">
-      <div class="jumbotron" style="width: 100%; height: 290px; white-space: nowrap;  overflow: hidden; color:blue;" >
-        <div class="row"  >
-          <div class="col-md-9" style="text-align: left;">
-            <div> <h2 style="font-variant-caps: petite-caps;"> Md Solimul Chowdhury</h2> </div>
-          <div>  <h3 style="font-variant-caps: petite-caps;"> Postdoctoral Research Associate <br/>
-            School of Computer Science <br/>
-            Carnegie Mellon University</h3> </div>
-      
-            <div style="text-align: center; display: inline-block; font-size: 24px;">
-              <a href="mailto: mdsolimc@cs.cmu.edu"><i class="fa"  aria-hidden="true" style="color:red; margin-right: 60px;">&#xf0e0;</i></a> 
-              <a href="https://github.com/solimul" target="_blank"><i class="fab fa-github" style="color:black; margin-right: 60px"></i></a>
-              <a href="https://dblp.org/pid/128/3478.html" target="_blank"><i class="ai ai-dblp ai" style="color:green; margin-right: 60px"></i></a>
-              <a href="https://scholar.google.ca/citations?user=dBW-whUAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar ai" style="color:blue"></i></a>
-            </div>
-            <br />
-          </div>
-          <div id ="picture" class="col-md-3" style="text-align: center; margin-top: 10px; ">
-             <div><img  style="height: 200px;  width: 200px;" src="solimul.jpg" /> </div>
-          </div>
+  <header>
+    <div style="float: left;">
+        <h1 style="text-align: left; margin-bottom: 0;">Md Solimul Chowdhury, PhD</h1>
+        <h2 style="text-align: left; margin-left: 80px;">
+            <a href="https://scholar.google.ca/citations?user=dBW-whUAAAAJ&hl=en" target="_blank">
+                <img class="hrefimg" src="gs.png" >
+            </a>
+            
+            <a href="https://dblp.org/pid/128/3478.html" target="_blank">
+                <img class="hrefimg" src="dblp.png">
+            </a>
+            <a href="mailto:solimul.chowdhury@gmail.com" target="_blank">
+                <img class="hrefimg" src="mail.png">
+            </a>
+            <a href="https://solimul.github.io/" target="_blank">
+                <img class="hrefimg" src="blog.png">
+            </a>
+        </h2>
+    </div>
+    <!-- <div style="text-align: center; margin-top: 20px;">
+      <iframe src="pie.html" width="200" height="200" style="border: none;"></iframe>
+  </div> -->
+</header>
+
+
+<main>
+    <!-- First Row: 'picture', 'about me', and 'recent news' -->
+    <section id="first-row" class="about-row">
+        <!-- Column 1: 'picture' -->
+        <div class="about-column img">
+            <img src="solimul.jpg" alt="Your Picture">
         </div>
-      </div>
-      
-  </div>
-
-    <!-- <div id="buttons" class="row" style="margin-top: -15px; margin-bottom:10;">
-      <div class="col-md-12" style="display: inline-block; ">
-      <button class="button_class" onClick='window.location="#education-h2"'>Education</button>
-      <button class="button_class" onClick='window.location="#work-h2"'>Work</button>
-      <button class="button_class" onClick='window.location="#publication-h2"'>Publications</button>
-      <button class="button_class" onClick='window.location="#services-h2"'>Services</button>
-      <button class="button_class" onClick='window.location="#competition-h2"'>Competition</button>
-      <button class="button_class" onClick='window.location="#funding-h2"'>Funding</button>
-      <button class="button_class" onClick='window.location="#media-h2"'>Media</button>
-      </div>
-    </div> -->
-    
-    <div class="row" id="intro" style="text-align: justify; margin:5px">
-      <div class="col-md-12" style="margin:5px;">
-        Welcome to my profile page. I am a Postdoctoral Research Associate at the School of Computer Science (SCS) at Carnegie Mellon University (CMU). My postdoc supervisor is associate professor <a href="http://www.cs.cmu.edu/~mheule/" target="Blank"> Marijn Heule</a>. My postdoc position at CMU is partially supported by an <a href="https://www.nserc-crsng.gc.ca/students-etudiants/pd-np/pdf-bp_eng.asp" target="_blank">NSERC Postdoctoral Fellowship</a> from Canada. 
-        <br/>
-        I completed my PhD and MSc from the computing science department of University of Alberta, Canada. I also have 5 years of software development experience from Canada. 
-        <br/> 
-          My research interests lie in the area of <a href="https://en.wikipedia.org/wiki/Automated_reasoning" target="_blank">automated reasoning</a> (AR). AR studies computational frameworks that mimic reasoning aspects of human cognition. Currently, my focus is on boolean reasoning with <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem" target="_blank">Satisfiability (SAT) solving</a> solving. SAT solving algorithms generate proofs for syntactically valid statements in propositional logic. In recent years, SAT solving has found numerous important practical applications in areas, such as formal verification, theorem proving, and AI. 
-          <br/>
-          The major theme of my work so far is to design, implement, and evaluate novel and effective algorithms for boolean
-reasoning. The solvers boosted with the techniques that I developed during my PhD
-study have improved state of the art of this area, and have won multiple awards in the recent international boolean
-satisfiability competitions. 
-<br/>
-My long-term research agendas are: 
-<ul style="list-style: none;">
-  <li>
-    + <a href="algorithmic_cooperation.pdf" target="_blank" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps;color:blue">Algorithmic Cooperation</a> to boost solvers with algorithmic cooperation 
-  </li> 
-  <li>
-    + <a href="distributed_reasoning.pdf" target="_blank" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps;color:blue">Distributed Reasoning</a> to develop solvers for a distributed environment
-  </li>
-  <li>
-    + <a href="ML_Reasoning.pdf" target="_blank" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps;color:blue">Machine Learning for Reasoning</a> to improve performance of solvers using machine learning techniques
-  </li>
-  <li>
-    + <a href="explaining.pdf" target="_blank" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps;color:blue">Explaining Solvers Performance Behavior</a> to improve the understanding why problems which are understood to be hard in theory are easy to solve in practice
-  </li>
-  <li>
-   + <a href="impacting.pdf" target="_blank" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps;color:blue">Impacting Other Reasoning Paradigms</a> by transferring techniques developed for boolean reasoning to other related reasoning paradigms
-  </li>
-</ul>
-
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="education-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Education </h2>
-        <ul style="list-style: none;">
-            <li>+ <label style="font-weight: bold;"> PhD</label>, 2016 - 2021, Department of Computing Science, University of Alberta, Edmonton, Canada. 
-              <br/> 
-              <em> Thesis: </em>  <a href="phd_thesis.pdf" target="_blank">Empirical Insights Driven CDCL SAT Algorithms</a> (<label style="color:red; font-weight: bold; ">Nominated for a dissertation award</label>)
-              <br />
-             
-              <em>Supervisors: </em> 
-               <a href="https://webdocs.cs.ualberta.ca/~mmueller/" target="_blank"> Martin Mueller
-              </a> and  <a href="https://apps.ualberta.ca/directory/person/jyou" target="_blank"> Jia You 
-              </a> 
+        <!-- Column 2: 'about me' -->
+        <div class="about-column">
+            <h2 style="margin-bottom: 60px;">About Me</h2>
+            Welcome to my profile page. Actively pursuing a research and teaching position in computer science, I bring a wealth of research experience in the area of automated reasoning gathered from various roles: as a Postdoctoral Research Associate at Carnegie Mellon University's School of Computer Science, as a PhD candidate at University of Alberta, and as an Applied Scientist Intern at Amazon Web Services. I also have 5 years of software development experience from Canada.
+            <br />
+            <br />
+            My research focuses on automated reasoning (AR), exploring computational frameworks that emulate reasoning aspects of cognition. In particular, I have worked in the area of boolean satisfiability (SAT) solving.  SAT solving algorithms, generate proofs for statements in propositional logic and have practical applications in formal verification, theorem proving, and AI.        
+            <br/>
+            <br />
+            The SAT solvers improved through my research have advanced the field's state of the art, earning recognition with multiple awards in recent international SAT competitions.          
+          </div>
+        <!-- Column 3: 'recent news' -->
+        <div class="thrusts-column">
+          <h2>Resarch Thrusts</h2>
+          <ul>
+            <li class="fancy-bullet">
+                <strong>Improving SAT</strong>
+                <span class="hover-text">Enhancing SAT solving algorithms and heuristics to improve their efficiency</span>
             </li>
-            <li>+ <label style="font-weight: bold;"> MSc</label>, 2009 - 2011, Department of Computing Science, University of Alberta, Edmonton, Canada.
-              <br/> 
-              <em> Thesis: </em>  <a href="masters_thesis.pdf" target="_blank">SAT with Global Constraints</a> 
-              <br />  
-             
-              <em>Supervisor: </em>  
-              <a href="https://apps.ualberta.ca/directory/person/jyou" target="_blank"> Jia You 
-              </a>
+            
+            <li class="fancy-bullet">
+                <strong>Deepening Understanding</strong>
+                <span class="hover-text">Deepening understanding of SAT solvers' inner workings and AR at large                </span>
             </li>
-            <li>+ <label style="font-weight: bold;"> BSc</label>, 2004 - 2007, Department of Computer Science and Information Technology, Islamic Univ. of Technology, Bangladesh.
-              <br/> 
-              <em> Thesis: </em>  Haplotype Inference by Pure Parsimony with SAT in Distributed Environment
-              <br />  
-             
-              <em>Supervisor: </em> 
-              <a href="https://www.alcorn.edu/academics/schools-and-departments/school-of-arts-and-sciences/department-of-mathematics-and-computer-science/faculty-and-staff/dr-sardar-haque" target="_blank">
-                Sardar Haque
-              </a> 
+            
+            <li class="growing-interest fancy-bullet">
+                <strong>Neural Symbolic Integration (Growing Interest)</strong>
+                <span class="hover-text">
+                    Enhancing capability of AI systems by integrating AR and machine learning
+              </li>
+            
+            <li class="growing-interest fancy-bullet">
+                <strong>Formal Verification in Fintech (Growing Interest)</strong>
+                <span class="hover-text">Formal verification of blockchain smart contracts, ensuring reliable deployment
+                </span>
             </li>
         </ul>
-      </div>
-    </div>
-    
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="work-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Work Experience </h2>
-        <ul style="list-style: none;">
-            <li>+ <label style="font-weight: bold;"> Postdoc</label>, Feb, 2022 - Present, School of Computing Science, Carnegie Mellon University, Pittsburgh, PA, USA 
-            <li>+ <label style="font-weight: bold;"> Applied Scientist Intern</label>, Jun 2021 - Sep 2021, Automated Reasoning@Amazon Research, Portland, OR, USA
-            </li> 
-            </li>
-            <li>+ <label style="font-weight: bold;"> Teaching & Research Assistant/Fellow</label>, Sep 2016 - Dec 2021, Dept. of CS, University of Alberta, Edmonton, Canada
-              <br/> 
-            </li>
-            <li>+ <label style="font-weight: bold;">Software Developer</label>, Oct 2011 - Aug 2016, Technology North Corporation, Edmonton, Canada
-            </li>
-            <li>+ <label style="font-weight: bold;">Lecturer</label>, Nov 2007 - July 2009, Sylhet International University, Sylhet, Bangladesh
-            </li>
-        </ul>
-      </div>
-    </div>
+         
+        </div>
+    </section>
 
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="publication-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Publications </h2>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Referred Publications </h4>
-        <ul style="list-style: none;">
+    <!-- Publications Section -->
+    <!-- <section id="research-thrusts">
+      <h2>Resarch Thrusts</h2>
+
+      <ul>
+        <li><strong>Improving SAT:</strong> My research focuses on enhancing SAT (Satisfiability) solving algorithms, with the goal of improving their efficiency and effectiveness in solving boolean reasoning problems.</li>
+        
+        <li><strong>Deepening Understanding:</strong> I am dedicated to deepening our understanding of automated reasoning systems, particularly in exploring the inner workings and cognitive aspects involved in computational frameworks.</li>
+        
+        <li class="growing-interest"><strong>Growing Interest - Neural Symbolic Integration:</strong> Exploring the integration of neural and symbolic paradigms, aiming to cross-fertilize automated reasoning and machine learning. This involves synthesizing more powerful hybrid AI systems by leveraging the strengths of both paradigms.</li>
+        
+        <li class="growing-interest"><strong>Growing Interest - Formal Verification in Fintech:</strong> Growing interest in applying AR-based formal verification techniques in the rapidly evolving field of Fintech, with a particular focus on the cryptocurrency sphere. This includes developing methods to ensure the reliability and correctness of smart contracts deployed in block-chains.</li>
+    </ul>
+  </section> -->
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2>Publications</h2>
+        <h4>Peer-reviewed Publications</h4>
+
+        <ul>
           <li>
             + <b>Md Solimul Chowdhury</b>, Cayden Codel, and Marijn J. H. Heule. TaSSAT: Transferring and Sharing in SAT. TACAS-2024. (To Appear) <a href="" target="_blank">[Paper]</a>  <a href="https://github.com/solimul/yal-lin" target="_blank">[Code]</a> 
             <ul style="list-style: none;"> 
@@ -265,16 +348,16 @@ My long-term research agendas are:
          </li>
         
         </ul>
-
+<!-- 
         <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Under Preparation </h4>
         <ul style="list-style: none;">
           <li>
            + <b>Md Solimul Chowdhury </b>, Martin Mueller, and Jia-Huai You: A Deep Dive into Conflict Generating Decisions. CoRR abs/2105.04595 (2021)
             <a href="https://arxiv.org/abs/2105.04595" target="_blank">[Paper]</a>
           </li>
-        </ul>
+        </ul> -->
         
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Informal Publications <ul></ul> </h4>
+        <h4> Informal Publications</h4>
         <ul style="list-style: none;">
         <li>
          + <b>Md Solimul Chowdhury </b>, Martin Mueller, and Jia-Huai You: Population Safety- A SAT Benchmark based on Elementary Cellular Automaton. In Proceedings of SAT Competition 2020: 75-76. <a href="https://helda.helsinki.fi/bitstream/handle/10138/318450/sc2020_proceedings.pdf?sequence=1&isAllowed=y" target="_blank">[Paper]</a>
@@ -301,167 +384,113 @@ My long-term research agendas are:
         + <b> Md. Solimul Chowdhury</b>, Victor Silva: Evolving Real-Time Heuristics Search Algorithms with Building Blocks. CoRR abs/1805.08256, 2018. <a href="https://arxiv.org/pdf/1805.08256.pdf" target="_blank">[Paper]</a>
         </li>
         </ul>
-      </div>
-    </div>
+    </section>
 
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Talks </h2>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Invited Talks</h4>
-        <ul style="list-style: none;">
-          <li>
-            + Extensions of CDCL Branching Heuristics by Exploration during Conflict Depression. At the
-            workshop of Theoretical Foundations of SAT/SMT Solving, Simons Institute for the Theory of
-            Computing, University of California, Berkeley, 28th April, 2021. <a href="simons_talk.pdf" target="_blank">[Talk]</a> 
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Work Experience</h2>
+        <ul>
+          <li>+ <label style="font-weight: bold;"> Postdoc</label>, Feb, 2022 - 2024, School of Computing Science, Carnegie Mellon University, Pittsburgh, PA, USA 
+          <li>+ <label style="font-weight: bold;"> Applied Scientist Intern</label>, 2021, Automated Reasoning@Amazon Research, Portland, OR, USA
+          </li> 
           </li>
-        </ul>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Conference Talks</h4>
-        <ul style="list-style: none;">
-          <li>
-            + Guiding CDCL SAT Search via Random Exploration amid Conflict Depression. Technical Program at AAAI-2020, New York, USA <a href="AAAI20_main_track_presentation.pdf" target="_blank">[Talk]</a>
+          <li>+ <label style="font-weight: bold;"> Teaching & Research Assistant/Fellow</label>, 2016 - 2021, Dept. of CS, University of Alberta, Edmonton, Canada
+            <br/> 
           </li>
-          <li>
-            + Exploiting Glue Clauses to Design Effective CDCL Branching Heuristics, Main Technical Program at CP2019, Stamford, Connecticut, USA <a href="CP_MainTrack_Presentation.pdf" target="_blank">[Talk]</a>
+          <li>+ <label style="font-weight: bold;">Software Developer</label>, 2011 - 2016, Technology North Corporation, Edmonton, Canada
           </li>
-          <li>
-            + Flexible Approximators for Approximating Fixpoint Theory. Canadian Conference on AI 2016. <a href="paper_31_presentation.pdf" target="_blank">[Talk]</a>
+          <li>+ <label style="font-weight: bold;">Lecturer</label>, 2007 - 2009, Sylhet International University, Sylhet, Bangladesh
           </li>
-        </ul>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Industry Talks</h4>
-        <ul style="list-style: none;">
-          <li> + SAT with Memory. End of Internship Talk. Trusted Solver Group@Amazon Web Services (AWS). <a href="EOI_Talk_AWS.pdf" target="_blank">[Talk]</a> </li>
-        </ul>
-      </div>
-    </div>
+      </ul>
+    </section>
 
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="services-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Academic Services </h2>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Juornal Reviewer </h4>
-        <ul style="list-style: none;">
-          <li>
-            + Journal on Satisfiability, Boolean Modeling and Computation (JSAT), 2021
-          </li>
-        </ul>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)"> Program Committee Member </h4>
-        <ul style="list-style: none;">
-        <li>
-          + AAAI-2023, AAAI-2021, IJCAI-2020, ECAI-2020
-        </li>
-        </ul>
-        <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)">External Reviewer</h4>
-        <ul style="list-style: none;">
-        <li>
-        + CADE-2023, SoCS-2018,         IJCAI-2017        ,        ASPOCP-2017        ,        AAAI-2017        ,        Canadian AI-2017        ,        ICAPS-2017,
-        ICLP-2016         ,        KR2016             ,        AAAI-2016        
-        ASPOCP-2015       ,        LPNMR-2015         ,        ICLP-2015
-        KSEM-2014,         ICLP-2013,         Canadian AI-2011
-        </ul>
-      </div>
-    </div>
-
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="competition-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue">Competition Medals</h2>
-          <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)">SAT Competition 2022</h4>
-            <ul style="list-style: none;"> 
-                <li>+ <font color="red"><b> Bronze medal</b></font> (3rd place out of 29 solvers) medal in the SAT subtrack of the Anniversary Sequential Track  <a href="https://satcompetition.github.io/2022/slides/satcomp22slides.pdf" target="_blank">[Announcement]</a>  <a href="" target="_blank">[Medal]</a>
-                </li>
-                <li>+ <font color="red"><b> Bronze medal</b></font> (3rd place out of 29 solvers) medal in the Anniversary Sequential Track <a href="https://satcompetition.github.io/2022/slides/satcomp22slides.pdf" target="_blank">[Announcement]</a>  <a href="" target="_blank">[Medal]</a>
-                </li>
-                <li>+ <font color="red"><b> Bronze medal</b></font> (3rd place out of 52 solvers) medal in the MAIN track <a href="https://satcompetition.github.io/2022/slides/satcomp22slides.pdf" target="_blank">[Announcement]</a> <a href="" target="_blank">[Medal]</a>
-                </li>
-            </ul>
-            <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)">SAT Competition 2021</h4>
-            <ul style="list-style: none;"> 
-                <li>+ <font color="red"><b> Bronze medal</b></font> (ranked 3rd out of 48 solvers) medal in the SAT track  <a href="https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf" target="_blank">[Announcement]</a> <a href="file:///home/solimul/Drives/personal_website/profile_page_solimul/sat-21_award.jpg" target="_blank">[Medal]</a> 
-                </li>
-                <li>+ <font color="red"><b> Bronze medal</b></font> (ranked 3rd out of 48 solvers) medal in the MAIN track  <a href="https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf" target="_blank">[Announcement]</a> <a href="file:///home/solimul/Drives/personal_website/profile_page_solimul/sat-21_award.jpg" target="_blank">[Medal]</a> 
-                </li>
-            </ul>
-            <h4 style="margin-left:0.4cm; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:rgb(62, 101, 3)">SAT Race 2019</h4>
-          <ul style="list-style: none;"> 
-            <li>+ <font color="red"><b> Silver medal</b></font> (ranked 2nd out of 55 solvers) medal in the UNSAT track  <a href="http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf" target="_blank">[Announcement]</a> 
+    <!-- Contact Section -->
+    <section id="satcomp">
+        <h2>SAT Competition Medals</h2>
+        <h4 >SAT Competition 2023</h4>
+        <ul style="list-style: none;"> 
+            <li> 
+              + one medal: Parallel-Unsatisfiable Track (silver)
             </li>
-          </ul>
-      </div>
-    </div>
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="funding-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Fellowships, Scholarships, and Grants </h2>
-        <ul style="list-style: none;">
-          <li>
-          + NSERC Postdoctoral Fellowship, Feb 2022 - Jan 2024 
-          </li>
-        <li>
-          + Alberta Excellence Graduate Scholarship, 2021 
-        </li>
-        <li>
-          + Ernst Mach Scholarship, 2021 (declined due to COVID-19)
-        </li>
-        <li>
-          + AAAI Student Scholarship, 2020 
-        </li>
-        <li>
-          + Doctoral Program Travel Grant (CP 2019)
-        </li>
-        <li>
-          + Alberta Innovates Graduate Student Scholarship, 2018
-        </li>
-        <li>
-          + President’s Doctoral Prize of Distinction, 2018-2020  
-        </li>
-        <li>
-          + NSERC PGS Doctoral Scholarship, 2018-2020  
-        </li>
-        <li>
-          + GSA Travel Award, 2018
-        </li>
-        <li>
-          + AAAI Student Scholarship, 2018
-        </li>
-        <li>
-         + QE II Doctoral Scholarship, 2016
-        </li>
-        <li>
-          + AITF R&amp;D Award Industrial, 2012-2014  
-        </li>
-        <li>
-          + Swedish Trust Scholarship, 2010 
-        </li>
-        <li>
-          + Entrance Scholarship, Islamic Univ. of Tech, 2004-2006 
-        </li>
-      </div>
-    </div>
+        </ul>
+        <h4 >SAT Competition 2022</h4>
+            <ul style="list-style: none;"> 
+                <li> 
+                  + three medals : Satisfiable subtrack (bronze), Anniversary Track (bronze), Main Track (bronze) 
+                </li>
+            </ul>
+            <h4 >SAT Competition 2021</h4>
+            <ul style="list-style: none;"> 
+                <li>  
+                  + two medals : Satisfiable subtrack (bronze),  Main Track (bronze) 
+                </li>
+            </ul>
+            <h4 >SAT Race 2019</h4>
+            <ul style="list-style: none;"> 
+                <li>  
+                  + one medal : Unsatisfiable subtrack (silver) 
+                </li>
+            </ul>
+    </section>
 
-    <div class="row" style="text-align: justify;">
-      <div class="col-md-12">
-        <h2 id="media-h2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: left;font-variant-caps: petite-caps; color:blue"> Media </h2>
-        <div style="display: inline-block; text-align: center;">
-         <ul style="list-style: none;">
-          <li> 
-            <a href="https://bit.ly/39hkFgC" target="_blank">
-              <div color="black">
-              + Convocation ‘22: Md Solimul Chowdhury, PhD Computing Science
-          </div>
-          </a>
-        </li>
+    <section id="grant">
+      <h2>Fellowships, Scholarships, and Grants</h2>
+      <div class="two-columns">
+        <ul class="column">
+          <li>+ NSERC Postdoctoral Fellowship, 2022 - 2024</li>
+          <li>+ Alberta Excellence Graduate Scholarship, 2021</li>
+          <li>+ Ernst Mach Scholarship, 2021 (declined due to COVID-19)</li>
+          <li>+ AAAI Student Scholarship, 2020</li>
+          <li>+ Doctoral Program Travel Grant (CP 2019)</li>
+          <li>+ Alberta Innovates Graduate Student Scholarship, 2018</li>
+          <li>+ President’s Doctoral Prize of Distinction, 2018-2020</li>
+        </ul>
+        <ul class="column">
+          <li>+ NSERC PGS Doctoral Scholarship, 2018-2020</li>
+          <li>+ GSA Travel Award, 2018</li>
+          <li>+ AAAI Student Scholarship, 2018</li>
+          <li>+ QE II Doctoral Scholarship, 2016</li>
+          <li>+ AITF R&D Award Industrial, 2012-2014</li>
+          <li>+ Swedish Trust Scholarship, 2010</li>
+          <li>+ Entrance Scholarship, Islamic Univ. of Tech, 2004-2006</li>
+        </ul>
+      </div>
+  </section>
 
-           <li>
-              <a href="https://www.ualberta.ca/science/news/2020/february/bitcoin-mining.html" target="_blank">
-                <div color="black">
-                  + Faster and greener: Reducing the carbon footprint of Bitcoin mining
-              </div>
-            </a>
-           </li>
+  <section id="grant">
+    <h2>Academic Services</h2>
+    <h4>Journal Review</h4>
+    <ul>
+      <li>  
+        + JAIR-2024, JSAT-2021
+      </li>
+    </ul>
+    <h4>Program Committee Member</h4>
+    <ul>
+      <li>
+        + TACAS-2024 (AEC), AAAI-2024, AAAI-2023, AAAI-2021, IJCAI-2020, ECAI-2020
+      </li>
+    </ul>
    
+    <h4>External Reviewer</h4>
+    <ul>
+      <li>
+      + CADE-2023, SoCS-2018,  IJCAI-2017        ,        ASPOCP-2017        ,        AAAI-2017        ,        Canadian AI-2017        ,        ICAPS-2017,
+      ICLP-2016         ,        KR2016             ,        AAAI-2016        
+      ASPOCP-2015       ,        LPNMR-2015         ,        ICLP-2015
+      KSEM-2014,         ICLP-2013,         Canadian AI-2011
+      </li>
+      </ul>
+    </div>
+</section>
+    
+  </main>
 
-         </ul> 
-      </div>
-      </div>
-    </div>  
-  </div>
 
 
-</body></html>
+<footer>
+    <p>&copy; 2024 Your Name</p>
+</footer>
+
+</body>
+</html>
