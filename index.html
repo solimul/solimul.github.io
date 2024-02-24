@@ -15,13 +15,13 @@
         }
 
         header {
-      background: linear-gradient(to right, #000000 25%, #f6f8fa 50%);
-        color: white;
-        padding: 20px;
-        text-align: left;
-        overflow: auto;
-        max-height: 80vh; /* Set a maximum height for scrolling */
-    }
+          background: linear-gradient(to right, white 25%, black 50%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            overflow: auto;
+            max-height: 80vh; /* Set a maximum height for scrolling */
+        }
 
         footer {
             background-color: #333;
@@ -96,8 +96,13 @@
 
           }
 
-        h1, h2 {
-            color: grey;
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        h2 {
+            color: orangered;
             text-align: center;
         }
 
@@ -111,6 +116,7 @@
             line-height: 1.6;
             text-align: justify;
         }
+        
         .hrefimg {
           max-width: 40px;
           max-height: 40px;
@@ -122,16 +128,20 @@
             transform: scale(1.20);
         }
 
-        ul {
-    list-style-type: none;
-    padding: 0;
-}
+        a {
+          text-decoration: none;
+        }
 
-li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 30px;
-}
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        li {
+          margin-bottom: 15px;
+          position: relative;
+          padding-left: 30px;
+        }
 
 /* li::before {
     content: "\2022"; 
@@ -143,39 +153,51 @@ li {
     transform: translateY(-50%);
 } */
 
-.fancy-bullet strong {
-    display: inline;
-}
+        .fancy-bullet strong {
+            display: inline;
+        }
 
-.hover-text {
-    margin-top: 10px; /* Adjust the spacing between strong and hover text */
-    border: 2px solid #3498db; /* Fancy blue border */
-    padding: 10px; /* Add padding for a better look */
-    border-radius: 10px; /* Rounded corners */
-    display: block; /* Show the hover text */
-}
+        .hover-text {
+            margin-top: 10px; /* Adjust the spacing between strong and hover text */
+            /*border: 2px solid #3498db;*/ 
+            padding: 10px; /* Add padding for a better look */
+            border-radius: 10px; /* Rounded corners */
+            display: block; /* Show the hover text */
+        }
 
-.fancy-bullet .hover-text::before {
-    content: none; /* Remove bullet point for hover text */
-}
+        .fancy-bullet .hover-text::before {
+            content: none; /* Remove bullet point for hover text */
+        }
 
-#grants {
-  display: flex;
-  flex-wrap: wrap;
-}
+        #grants {
+          display: flex;
+          flex-wrap: wrap;
+        }
 
-.two-columns {
-  display: flex;
-  width: 100%;
-}
+        .two-columns {
+          display: flex;
+          width: 100%;
+        }
 
-.column {
-  flex: 1;
-  margin-right: 20px;
-}
+        .column {
+          flex: 1;
+          margin-right: 20px;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .quote img {
+          float:right;
+          max-width: 90%;
+          max-height:200px;
+        }
 
     </style>
 </head>
+
 <body>
   <header>
     <div style="float: left;">
@@ -196,9 +218,9 @@ li {
             </a>
         </h2>
     </div>
-    <!-- <div style="text-align: center; margin-top: 20px;">
-      <iframe src="pie.html" width="200" height="200" style="border: none;"></iframe>
-  </div> -->
+    <div class="quote">
+      <img src="quote.png" >
+    </div>
 </header>
 
 
@@ -206,9 +228,7 @@ li {
     <!-- First Row: 'picture', 'about me', and 'recent news' -->
     <section id="first-row" class="about-row">
         <!-- Column 1: 'picture' -->
-        <div class="about-column img">
-            <img src="solimul.jpg" alt="Your Picture">
-        </div>
+        
         <!-- Column 2: 'about me' -->
         <div class="about-column">
             <h2 style="margin-bottom: 60px;">About Me</h2>
@@ -224,30 +244,46 @@ li {
         <div class="thrusts-column">
           <h2>Resarch Thrusts</h2>
           <ul>
-            <li class="fancy-bullet">
-                <strong>Improving SAT</strong>
-                <span class="hover-text">Enhancing SAT solving algorithms and heuristics to improve their efficiency</span>
+            <li>
+                <span class="icon">🧠</span>
+                <strong>Improving SAT</strong> 
+                <li>Enhancing SAT solving algorithms and heuristics to improve their efficiency</li>
             </li>
-            
-            <li class="fancy-bullet">
-                <strong>Deepening Understanding</strong>
-                <span class="hover-text">Deepening understanding of SAT solvers' inner workings and AR at large                </span>
+            <li>
+                <span class="icon">🔍</span>
+                <strong>Deepening Understanding</strong> <li>Deepening understanding of SAT solvers' inner workings and AR at large</li>
             </li>
-            
-            <li class="growing-interest fancy-bullet">
-                <strong>Neural Symbolic Integration (Growing Interest)</strong>
-                <span class="hover-text">
-                    Enhancing capability of AI systems by integrating AR and machine learning
-              </li>
-            
-            <li class="growing-interest fancy-bullet">
-                <strong>Formal Verification in Fintech (Growing Interest)</strong>
-                <span class="hover-text">Formal verification of blockchain smart contracts, ensuring reliable deployment
-                </span>
+            <li>
+                <span class="icon">🤖</span>
+                <strong>Neural Symbolic Integration</strong> <li>Enhancing capability of AI systems by integrating AR and machine learning</li> 
+            </li>
+            <li>
+                <span class="icon">🔐</span>
+                <strong>Formal Verification in Fintech</strong> <li> Formal verification of blockchain smart contracts, ensuring reliable deployment</li>
             </li>
         </ul>
          
         </div>
+        <div class="thrusts-column">
+          <h2>Updates</h2>
+          <ul>
+            <li>
+                <strong> February 2024 </strong> Reviewer for JAIR
+            </li>
+            <li>
+              <strong> February 2023 </strong> Working on a submission
+          </li>
+          <li>
+              <strong> December 2023 </strong> Paper accepted for TACAS 2024
+          </li>   
+          <li>
+            <strong> November 2023 </strong> Program committee member for TACAS AEC 2024
+        </li>
+        <li>
+          <strong> October 2023 </strong> Program committee member for AAAI 2024
+      </li>           
+        </ul>
+      </div>
     </section>
 
     <!-- Publications Section -->
@@ -289,7 +325,7 @@ li {
             SAT 2022:27:1--27:24  <a href="SAT22-solver-state.pdf" target="_blank">[Paper]</a> <a href="https://github.com/amazon-science/cadical" target="_blank">[Code]</a> 
             <ul style="list-style: none;"> 
               <li> + Acceptance Rate: 44.28 % (31/70) </li> 
-              <li> + Nominated for a  <font color="red"> <b> Best Paper Award </b> </font> (3/70)  </li> 
+              <li> + Nominated for a  <font color="blue">  Best Paper Award </font> (3/70)  </li> 
             </ul> 
        </li>
 
@@ -297,7 +333,7 @@ li {
              + <b> Md. Solimul Chowdhury</b>, Martin Mueller, Jia-Huai You: Guiding CDCL SAT Search via Random Exploration amid Conflict Depression. AAAI 2020. <a href="CD_expSAT_AAAI2020_Final.pdf" target="_blank">[Paper]</a> <a href="https://figshare.com/articles/expSAT_Solvers_Instances/10324172" target="_blank">[Code]</a> 
               <ul style="list-style: none;"> 
                  <li> + Acceptance Rate: 20.6% (1591/7737) </li> 
-                 <li> + Selected for <font color="red"> <b> Oral Presentation </b> </font>  </li> 
+                 <li> + Selected for <font color="blue"> Oral Presentation </font>  </li> 
                  <ul style="list-style: none;"> 
             <li>+ Oral Acceptance Rate: 5.8% (454/7737)  
           </li></ul>
