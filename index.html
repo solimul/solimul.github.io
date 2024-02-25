@@ -15,12 +15,12 @@
         }
 
         header {
-          background: linear-gradient(to right, white 25%, black 50%);
-            color: white;
-            padding: 20px;
-            text-align: left;
-            overflow: auto;
-            max-height: 80vh; /* Set a maximum height for scrolling */
+          background: linear-gradient(to right, black 0%, white 25%, white 75%, black 100%);
+          color: white;
+          padding: 20px;
+          text-align: left;
+          overflow: auto;
+          max-height: 80vh; /* Set a maximum height for scrolling */
         }
 
         footer {
@@ -199,10 +199,14 @@
 </head>
 
 <body>
-  <header>
-    <div style="float: left;">
-        <h1 style="text-align: left; margin-bottom: 0;">Md Solimul Chowdhury, PhD</h1>
-        <h2 style="text-align: left; margin-left: 80px;">
+  <header style="display: flex;">
+    <div id="pic" style="width: 25%; max-width: 25%; flex: 1; border-radius: 10%; margin-left: 5%;">
+      <!-- Your rounded image goes here -->
+      <img src="solimul.jpg" style="width: 40%; height: auto; border-radius: 10%;">
+    </div>
+    <div id="name" style="flex: 1; text-align: center;">
+        <h1>Md Solimul Chowdhury, PhD</h1>
+        <h2 style="margin-left: 80px;">
             <a href="https://scholar.google.ca/citations?user=dBW-whUAAAAJ&hl=en" target="_blank">
                 <img class="hrefimg" src="gs.png" >
             </a>
@@ -218,8 +222,8 @@
             </a>
         </h2>
     </div>
-    <div class="quote">
-      <img src="quote.png" >
+    <div id="quote" class="quote" style="flex: 1;">
+      <img src="quote.jpg">
     </div>
 </header>
 
